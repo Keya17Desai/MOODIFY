@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Choices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='buttons.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="head">Moodify</h1>
+    </header>
+    <div class="wrapper">
+    <h2>You look {{final_output}}</h2>
+    <h1>Let's have fun...!</h1>
+    <h2>What would you prefer?</h2>
+   
+
+    <div id="choices">
+        <div class="button-wrapper">
+            <a href="http://localhost:5000/songs/{{final_output}}"><button id="songs-button">Songs</button></a>
+        </div>
+        <div class="button-wrapper">
+            <a href="http://localhost:5000/movies/{{final_output}}"><button id="movies-button">Movies</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

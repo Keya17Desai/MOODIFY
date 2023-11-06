@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var movieData = [
+        {movie: "Schindler's List" ,link:"https://www.imdb.com/title/tt0108052/"},
+        {movie: "The Green Mile", link:"https://www.imdb.com/title/tt0120689/"},
+        {movie: "Forrest Gump", link:"https://www.imdb.com/title/tt0109830/"},
+        {movie: "Life Is Beautiful", link:"https://www.imdb.com/title/tt0118799/"},
+        {movie: "The Pursuit of Happyness", link:"https://www.imdb.com/title/tt0454921/"},
+        {movie: "Grave of the Fireflies", link:"https://www.imdb.com/title/tt0095327/"},
+        {movie: "My Girl", link:"https://www.imdb.com/title/tt0102492/"},
+        {movie: "Dancer in the Dark", link:"https://www.imdb.com/title/tt0168629/"},
+        {movie: "Million Dollar Baby", link:"https://www.imdb.com/title/tt0405159/"},
+        {movie: "Requiem for a Dream", link:"https://www.imdb.com/title/tt0180093/"},
+        ];
+        
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < movieData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='movie.jpg') }}"/>
+                <h4>Movie - ${movieData[i].movie}</h4>
+                <a href="${movieData[i].link}" target="_blank">Open in imdb</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">MOVIE FOR YOUR SAD MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

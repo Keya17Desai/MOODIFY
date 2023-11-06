@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var movieData = [
+        {movie: "Lost in Translation" ,link:"https://www.imdb.com/title/tt0335266/"},
+        {movie: "Eternal Sunshine of the Spotless Mind", link:""},
+        {movie: "The Tree of Life", link:"https://www.imdb.com/title/tt0478304/"},
+        {movie: "Into the Wild", link:"https://www.imdb.com/title/tt0758758/"},
+        {movie: "Before Sunrise", link:"https://www.imdb.com/title/tt0112471/"},
+        {movie: "Before Sunset", link:"https://www.imdb.com/title/tt0381681/"},
+        {movie: "Before Midnight", link:"https://www.imdb.com/title/tt2209418/"},
+        {movie: "The Great Beauty", link:"https://www.imdb.com/title/tt2358891/"},
+        {movie: "Being There", link:"https://www.imdb.com/title/tt0078841/"},
+        {movie: "A Single Man", link:"https://www.imdb.com/title/tt1315981/"},
+        {movie: "Moonlight", link:"https://www.imdb.com/title/tt4975722/"},
+        {movie: "Wings of Desire", link:"https://www.imdb.com/title/tt0093191/"},
+        ];
+        
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < movieData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='movie.jpg') }}"/>
+                <h4>Movie - ${movieData[i].movie}</h4>
+                <a href="${movieData[i].link}" target="_blank">Open in imdb</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">MOVIE FOR YOUR NEUTRAL MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

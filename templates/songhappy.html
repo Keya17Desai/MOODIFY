@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='songs.css') }}">
+</head>
+
+<body>
+
+  <header>
+    <h1 class="head">SONGS FOR YOUR HAPPY MOOD</h1>
+</header>
+
+  <div class="spotify-playlists">
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Happy</h4>
+        <p>Movie - Despicable Me 2</p>
+        <a href="https://open.spotify.com/track/60nZcImufyMA1MKQY3dcCH" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}"/>
+        <h4>Badtameez Dil</h4>
+        <p>Yeh Jawaani Hai Deewani</p>
+        <a href="https://open.spotify.com/track/4eu27jAU2bbnyHUC3G75U8" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>London Thumakda</h4>
+        <p>Movie - Queen</p>
+        <a href="https://open.spotify.com/track/2qJAzSE6uC94oH2NRoPrGl" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Kar Gayi Chull</h4>
+        <p>Movie - Kapoor & Sons</p>
+        <a href="https://open.spotify.com/track/3BhjbaGeI7E0CiIjctfdD3" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Ae Mere Humsafar</h4>
+        <p>Movie - Baazigar</p>
+        <a href="https://open.spotify.com/track/7GEVFIpWpZJwGoMvVpow5a" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Chak De India</h4>
+        <p>Movie - Chak De India</p>
+        <a href="https://open.spotify.com/track/6D3vmtskO4RbZP3bBIDY3X" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Jai Ho</h4>
+        <p>Slumdog Millionaire</p>
+        <a href="https://open.spotify.com/track/3MxLT7m4BjAA0lQl9lVBcM" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Lakshya</h4>
+        <p>Movie - Lakshya</p>
+        <a href="https://open.spotify.com/track/7o1yzUVkQt2Gto5yYvzo2T" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Zindagi Na Milegi Dobara</h4>
+        <p>Movie - Zindagi Na Milegi Dobara</p>
+        <a href="https://open.spotify.com/album/6Baavsh6HfNka1IyvPrr24" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+        <h4>Malhari</h4>
+        <p>Movie - Bajirao Mastani</p>
+        <a href="https://open.spotify.com/track/2K9uOczZgzGzvxb7ZgRJNK" target="_blank">Open in spotify</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="songList"></div>
+  
+</body>
+
+</html>

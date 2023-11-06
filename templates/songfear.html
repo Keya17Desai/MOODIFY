@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Song List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='songs.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var songData = [
+        {song: "Koi Mil Gaya", movie: "Koi Mil Gaya", link:"https://open.spotify.com/track/5L9fLNHSj5SuGvJRljdWJb"},
+        {song: "Raat Ka Nasha", movie: "Asoka", link:"https://open.spotify.com/track/4gjFNGQ0BodNqiOAOAOMSW"},
+        {song: "Fearless",  link:"https://open.spotify.com/track/77sMIMlNaSURUAXq5coCxE"},
+        {song: "Tum Hi Ho", movie: "Aashiqui 2", link:"https://open.spotify.com/track/56zZ48jdyY2oDXHVnwg5Di"},
+        {song: "Aaj Phir Tum Pe", movie: "Hate Story 2", link:"https://open.spotify.com/track/32SDVo3sSMGPL0IzRA6YTX"},
+        {song: "Kaise Bataaoon", movie: "3G", link:"https://open.spotify.com/track/69u6HoqhzzdUrWuYeDP6Go"},
+        {song: "Mere Haath Mein", movie: "Fanaa", link:"https://open.spotify.com/track/6oUK2k9OJ0WvmVveyauFB7"},
+        {song: "Khoya Khoya", movie: "Hero", link:"https://open.spotify.com/track/1kIaHdsk7dgJv11fANKeXg"},
+        {song: "Kahaan Hoon Main", movie: "Highway", link:"https://open.spotify.com/track/4CJYLB9DKIXMX890tz6646"},
+        {song: "Jaaniya", movie: "Haunted", link:"https://open.spotify.com/track/3C7sdXi874cGvWGMPurCTu"}
+        ];
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < songData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+                <h4>${songData[i].song}</h4>
+                <p>Movie - ${songData[i].movie}</p>
+                <a href="${songData[i].link}" target="_blank">spotify</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">SONGS FOR YOUR FEAR MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

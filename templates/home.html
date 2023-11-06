@@ -1,0 +1,22 @@
+<!-- templates/moodify.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODIFY</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <header>
+        <h1>MOODIFY</h1>
+    </header>
+    <div id="main-content">
+        <div class="image-container">
+            <img id="main-image" src="{{ url_for('static', filename='Background.png') }}" alt="Moodify Image">
+            <a href="http://127.0.0.1:5000/camera" id="try-button"> TRY IT</a>
+        </div>
+    </div>
+    
+</body>
+</html>

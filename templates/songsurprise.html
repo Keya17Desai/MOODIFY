@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Song List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='songs.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var songData = [
+        {song: "Tera Ban Jaunga", movie: "Kabir Singh",link :"https://open.spotify.com/track/3oWxFNsXstcancCR1wODR4"},
+        {song: "Kar Gayi Chull", movie: "Kapoor & Sons",link :"https://open.spotify.com/track/3BhjbaGeI7E0CiIjctfdD3"},
+        {song: "Badtameez Dil", movie: "Yeh Jawaani Hai Deewani",link :"https://open.spotify.com/track/4eu27jAU2bbnyHUC3G75U8"},
+        {song: "Saudagar Sauda Kar", movie: "Saudagar",link :"https://open.spotify.com/artist/1oMNjZOVmloobqepH8HLc7"},
+        {song: "Tum Hi Ho", movie: "Aashiqui 2",link :"https://open.spotify.com/track/56zZ48jdyY2oDXHVnwg5Di"},
+        {song: "Chak De India", movie: "Chak De India",link :"https://open.spotify.com/track/6D3vmtskO4RbZP3bBIDY3X"},
+        {song: "Kala Chashma", movie: "Baar Baar Dekho",link :"https://open.spotify.com/playlist/0zKtRUbXm07oMhytRRW1tD"},
+        {song: "Jai Ho", movie: "Slumdog Millionaire",link :"https://open.spotify.com/track/3MxLT7m4BjAA0lQl9lVBcM"},
+        {song: "London Thumakda", movie: "Queen",link :"https://open.spotify.com/track/2qJAzSE6uC94oH2NRoPrGl"},
+        {song: "Jeene Laga Hoon", movie: "Ramaiya Vastavaiya",link :"https://open.spotify.com/track/3t3wsY5IdLVzB9WidegJSU"}
+        ];
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < songData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='images/spotify.png') }}" />
+                <h4>${songData[i].song}</h4>
+                <p>Movie - ${songData[i].movie}</p>
+                <a href="${songData[i].link}" target="_blank">spotify</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">SONGS FOR YOUR SURPRISE MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

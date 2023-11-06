@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Song List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='songs.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var songData = [
+        {song: "Gimme Some Money", movie: "Spinal Tap" , link:"https://open.spotify.com/track/4IoV9RCzO7QUUmCvCZEsnf"},
+        {song: "Trash", movie: "Korn", link:"https://open.spotify.com/artist/3RNrq3jvMZxD9ZyoOZbQOD"},
+        {song: "Disco Disco", movie: "A Gentleman", link:"https://open.spotify.com/track/3euOpzKAHg3floSr6TgTRw"},
+        {song: "Lazy Lamhe", movie: "Thoda Pyaar Thoda Magic", link:"https://open.spotify.com/track/2IZQG2wYoVncO3hWCD4IyM"},
+        {song: "Gandi Baat", movie: "R... Rajkumar", link:"https://open.spotify.com/track/5kR5RZceCCPX3ks0rQP6kh"},
+        {song: "Fevicol Se", movie: "Dabangg 2", link:"https://open.spotify.com/track/0wEgK7RKkB1R6sR5Nrwh5g"},
+        {song: "Laila Main Laila", movie: "Raees", link:"https://open.spotify.com/playlist/2Yj7t0oW2gvJuaQKJeBu1G"},
+        {song: "Baby Doll", movie: "Ragini MMS 2", link:"https://open.spotify.com/track/5c3mUtkS8FvumKaVkcpB0H"},
+        {song: "Tooh", movie: "Gori Tere Pyaar Mein", link:"https://open.spotify.com/track/23Dpwemmuf6nYSzR9sUJ9M"},
+        {song: "Ae Meri Zohra Jabeen", movie: "Waqt", link:"https://open.spotify.com/track/6xCnMMPkIIhn3QyGJgd5xd"}
+        ];
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < songData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='images/spotify.png') }}"/>
+                <h4>${songData[i].song}</h4>
+                <p>Movie - ${songData[i].movie}</p>
+                <a href="${songData[i].link}" target="_blank">spotify</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">SONGS FOR YOUR DISGUST MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var movieData = [
+        {movie: "American Psycho" ,link:"https://www.imdb.com/title/tt0144084/"},
+        {movie: "Salo, or the 120 Days of Sodom", link:"https://www.imdb.com/title/tt0073650/"},
+        {movie: "The Human Centipede", link:"https://www.imdb.com/title/tt1467304/"},
+        {movie: "I Spit on Your Grave", link:"https://www.imdb.com/title/tt0077713/"},
+        {movie: "Antichrist", link:"https://www.imdb.com/title/tt0870984/"},
+        {movie: "Se7en", link:"https://www.imdb.com/title/tt0114369/"},
+        {movie: "Cannibal Holocaust", link:"https://www.imdb.com/title/tt0078935/"},
+        {movie: "The Texas Chain Saw Massacre", link:"https://www.imdb.com/title/tt0072271/"}
+        ];
+        
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < movieData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='movie.jpg') }}"/>
+                <h4>Movie - ${movieData[i].movie}</h4>
+                <a href="${movieData[i].link}" target="_blank">Open in imdb</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">MOVIE FOR YOUR DISGUST MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

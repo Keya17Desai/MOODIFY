@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var movieData = [
+        {movie: "The Sixth Sense" ,link:"https://www.imdb.com/title/tt0167404/"},
+        {movie: "Fight Club", link:"https://www.imdb.com/title/tt0137523/"},
+        {movie: "The Others", link:"https://www.imdb.com/title/tt0230600/"},
+        {movie: "The Usual Suspects", link:"https://www.imdb.com/title/tt0114814/"},
+        {movie: "Memento", link:"https://www.imdb.com/title/tt0209144/"},
+        {movie: "Primal Fear", link:"https://www.imdb.com/title/tt0117381/"},
+        {movie: "The Village", link:"https://www.imdb.com/title/tt0368447/"},
+        {movie: "The Prestige", link:"https://www.imdb.com/title/tt0482571/"},
+        {movie: "Donnie Darko", link:"https://www.imdb.com/title/tt0246578/"},
+        {movie: "Shutter Island", link:"https://www.imdb.com/title/tt1130884/"},
+        ];
+        
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < movieData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='movie.jpg') }}"/>
+                <h4>Movie - ${movieData[i].movie}</h4>
+                <a href="${movieData[i].link}" target="_blank">Open in imdb</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">MOVIE FOR YOUR SURPRISE MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>

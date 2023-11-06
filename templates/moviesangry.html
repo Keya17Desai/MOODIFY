@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var movieData = [
+        {movie: "Falling Down" , link:"https://www.imdb.com/title/tt0106856/"},
+        {movie: "American History X", link:"https://www.imdb.com/title/tt0120586/"},
+        {movie: "A Clockwork Orange", link:"https://www.imdb.com/title/tt0066921/"},
+        {movie: "Do the Right Thing", link:"https://www.imdb.com/title/tt0097216/"},
+        {movie: "Training Day", link:"https://www.imdb.com/title/tt0139654/"},
+        {movie: "The Social Network", link:"https://www.imdb.com/title/tt1285016/"},
+        {movie: "In the Bedroom", link:"https://www.imdb.com/title/tt0247425/"},
+        {movie: "Scarface", link:"https://www.imdb.com/title/tt0086250/"},
+        {movie: "Blue Velvet", link:"https://www.imdb.com/title/tt0090756/"},
+        {movie: "Waqt", link:"https://www.imdb.com/title/tt2209418/"},
+        {movie: "Natural Born Killers", link:"https://www.imdb.com/title/tt0110632/"}
+        ];
+        
+
+        var listContainer = document.querySelector('.spotify-playlists');
+
+        for (var i = 0; i < movieData.length; i++) {
+            var item = document.createElement('div');
+            item.classList.add('item');
+
+            item.innerHTML = `
+                <div class="list">
+                <div class="item">
+                <img src="{{ url_for('static', filename='movie.jpg') }}"/>
+                <h4>Movie - ${movieData[i].movie}</h4>
+                <a href="${movieData[i].link}" target="_blank">Open in imdb</a>
+                </div>
+                </div>
+            `;
+
+            listContainer.appendChild(item);
+        }
+    });
+</script>
+</head>
+<body>
+    <header>
+        <h1 class="head">MOVIE FOR YOUR ANGRY MOOD</h1>
+    </header>
+<div class="spotify-playlists">
+</div>
+</div>
+</body>
+</html>
